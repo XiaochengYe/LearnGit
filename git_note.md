@@ -17,7 +17,7 @@
 #### 版本回退
 Head 当前版本	Head^上一版	 Head^^上上一版本	HEAD~100
 1.退回上一版本	git reset --hard HEAD^
-	查看版本库状态(历史提交版本)	git log	[已无最新版本]
+	查看版本库状态(历史提交版本)	git log --pretty=oneline	[已无最新的版本]
 	显示文档 cat xxx
 2.返回上一版(重返未来)		git reset --hard xxx(commit_id)		
 	若clear了看不到新id(查看命令历史)	git reflog
@@ -37,6 +37,16 @@ git reset HEAD	把**仓库**最新版本转移到**暂存区**	git commit反向�
 Git跟踪修改：每次修改，如果不用git add到暂存区，那就不会加入到commit中。
 
 #### 撤销修改
+1.丢弃**工作区**的修改	git checkout -- xxx
+	1.修改后还没有被放到暂存区，撤销回到和版本库一模一样的状态
+	2.已经添加到暂存区，撤销回到添加到**暂存区**后的状态
+即，让这个文件回到最近一次 git commit 或 git add 时的状态。
+2.丢弃**暂存区**的修改	
+	1.git reset HEAD xxx	(把暂存区的修改撤销(unstage)，重新放回**工作区**)
+	2.git checkout -- xxx 	丢弃工作区修改
+3.丢弃**版本库**的修改	即版本回退
+
+
 
 
 
