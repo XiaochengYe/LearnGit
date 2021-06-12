@@ -30,9 +30,15 @@ git add 文件由**工作区**添加到**暂存区**，即stage(index)；git com
 对比：
 git diff 	比较的是**工作区**文件与**暂存区**文件的区别
 git diff --cached	**暂存区**和HEAD(**仓库**)的不同
-git diff HEAD	查看**工作区**和**仓库**的差异
+git diff HEAD --xxx	查看**工作区**和**仓库**(版本库**最新版本**)的差异
 git checkout	把**暂存区**最新版本转移到**工作区**(撤销工作区修改)		git add的反向命令
 git reset HEAD	把**仓库**最新版本转移到**暂存区**	git commit反向命令
+
+Git跟踪修改：每次修改，如果不用git add到暂存区，那就不会加入到commit中。
+
+#### 撤销修改
+
+
 
 
 
