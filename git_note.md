@@ -58,7 +58,7 @@ Git跟踪修改：每次修改，如果不用git add到暂存区，那就不会�
 1.通过SSH连接远程仓库		在主目录	ssh-keygen -t rsa -C "xxx@example.com"
 	有 id_rsa 和 id_rsa.pub 这两个文件
 2.登陆Github-SSH Keys		粘贴 id_rsa.pub 内容(公钥)
-######添加远程库：
+######添加远程库
 1.github-create a new repo-输入name，create。成功创建一个新的Git仓库(空的)。
 2.**关联远程库**	git remote add **origin** https://github.com/XiaochengYe/learngit.git
 3.本地库内容**推送**	git push -u origin master	(远程仓库不为空，不用-u)
@@ -80,10 +80,20 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://https:/
 (前者Git用ssh协议会更好)
 
 #### 分支管理
+###### 创建与合并分支
+![git-br-initial](F:\learngit\pic\0.png)
+1.**创建并切换**dev分支	git checkout -b dev
+		即：**创建分支**git branch dev； **切换分支**git checkout dev
+	**查看当前分支**(*)	git branch
+2.git add和commit修改
+3.分支工作完成切换回master分支
+	法一：git checkout master
+	法二：**创建并切换**到dev分支git switch -c dev		**切换**已有分支	git switch master[同1]
+4.将dev分支的工作成果**合并到当前**(master)分支	git merge dev
+5.**删除**dev分支	git branch -d dev
+	git branch 查看，只有master
 
-
-
-
+###### 解决冲突
 
 
 
