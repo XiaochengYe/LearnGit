@@ -95,7 +95,7 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://github.
 
 ###### 创建与合并分支
 
-![git-br-initial](.\pic\0.png)  
+![git-br-initial](./pic/0.png)  
 1.**创建并切换**dev分支	git checkout -b dev  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 即：**创建分支**git branch dev； **切换分支**git checkout dev  
 &ensp;&ensp;&ensp;&ensp; **查看当前分支**	git branch  
@@ -151,13 +151,21 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://github.
 &ensp;&ensp;&ensp;&ensp; 3.git stash list查看列表，恢复。  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 1.git stash apply	stash内容并不删除		git stash drop删除  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 2.git stash pop	把stash内容也删  
-
 **小结**：  
 1.修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除。  
-2.当手头工作没有完成时，先把工作现场git stash一下，然后去修复bug，修复后，再git stash pop，回到工作现场。  
-3.在master分支上修复的bug，想要合并到当前dev分支，可以用git cherry-pick <commit>命令，把bug提交的修改“复制”到当前分支，避免重复劳动。  
+2.当手头工作没有完成时，先把工作现场 `git stash` 一下，然后去修复bug，修复后，再`git stash pop`，回到工作现场。  
+3.在master分支上修复的bug，想要合并到当前dev分支，可以用`git cherry-pick <commit>`命令，把bug提交的修改“复制”到当前分支，避免重复劳动。  
 
 ###### Feature分支
+开发一个新 feature，最好新建一个分支。  
+如果要丢弃一个没有被合并过的分支，可以通过 git branch **-D** <name> 强行删除。  
+
+###### 多人协作
+
+
+
+
+
 
 
 
