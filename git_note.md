@@ -95,7 +95,7 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://github.
 
 ###### 创建与合并分支
 
-![git-br-initial](\learngit\pic\0.png)
+![git-br-initial](.\pic\0.png)  
 1.**创建并切换**dev分支	git checkout -b dev  
 &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 即：**创建分支**git branch dev； **切换分支**git checkout dev  
 &ensp;&ensp;&ensp;&ensp; **查看当前分支**	git branch  
