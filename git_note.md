@@ -21,10 +21,10 @@
 
 Head 当前版本	Head^上一版	 Head^^上上一版本	HEAD~100  
 1.退回上一版本	git reset --hard HEAD^  
-	查看版本库状态(历史提交版本)	git log --pretty=oneline	[已无最新的版本]  
-	显示文档 cat xxx  
+&ensp;&ensp;&ensp;&ensp; 查看版本库状态(历史提交版本)	git log --pretty=oneline	[已无最新的版本]  
+&ensp;&ensp;&ensp;&ensp; 显示文档 cat xxx  
 2.返回上一版(重返未来)		git reset --hard xxx(commit_id)		  
-	若clear了看不到新id(查看命令历史)	git **reflog**  
+&ensp;&ensp;&ensp;&ensp; 若clear了看不到新id(查看命令历史)	git **reflog**  
 
 #### 工作区和暂存区
 
@@ -44,27 +44,27 @@ Git跟踪修改：每次修改，如果不用git add到暂存区，那就不会�
 #### 撤销修改
 
 1.丢弃**工作区**的修改	git checkout -- xxx  
-	1.修改后还没有被放到暂存区，撤销回到和版本库一模一样的状态  
-	2.已经添加到暂存区，撤销回到添加到**暂存区**后的状态  
+&ensp;&ensp;&ensp;&ensp; 1.修改后还没有被放到暂存区，撤销回到和版本库一模一样的状态  
+&ensp;&ensp;&ensp;&ensp; 2.已经添加到暂存区，撤销回到添加到**暂存区**后的状态  
 即，让这个文件回到最近一次 git commit 或 git add 时的状态。  
 2.丢弃**暂存区**的修改	  
-	1.git reset HEAD xxx	(把暂存区的修改撤销(unstage)，重新放回**工作区**)  
-	2.git checkout -- xxx 	丢弃工作区修改  
+&ensp;&ensp;&ensp;&ensp; 1.git reset HEAD xxx	(把暂存区的修改撤销(unstage)，重新放回**工作区**)  
+&ensp;&ensp;&ensp;&ensp; 2.git checkout -- xxx 	丢弃工作区修改  
 3.丢弃**版本库**的修改	即版本回退  
 
 #### 删除文件
 
 1.删除目标文件	手动 / rm命令  
-	工作区和版本库不一致	通过git status可以查看哪些文件被删除  
+&ensp;&ensp;&ensp;&ensp; 工作区和版本库不一致	通过git status可以查看哪些文件被删除  
 2.两种情况：  
-	1.从版本库中删除该文件	①git rm xxx	②git commit -m "xxx"  
-	2.误删，需要恢复(到版本库最新版本)	git checkout -- xxx	[用版本库里的版本替换工作区的版本，不论工作区修改/删除，皆还原]  
-	注：如果从版本库中删除了文件又想恢复，可以用版本回退。  
+&ensp;&ensp;&ensp;&ensp; 1.从版本库中删除该文件	①git rm xxx	②git commit -m "xxx"  
+&ensp;&ensp;&ensp;&ensp; 2.误删，需要恢复(到版本库最新版本)	git checkout -- xxx	[用版本库里的版本替换工作区的版本，不论工作区修改/删除，皆还原]  
+&ensp;&ensp;&ensp;&ensp; 注：如果从版本库中删除了文件又想恢复，可以用版本回退。  
 
 #### 远程仓库
 
 1.通过SSH连接远程仓库		在主目录	ssh-keygen -t rsa -C "xxx@example.com"  
-	有 id_rsa 和 id_rsa.pub 这两个文件  
+&ensp;&ensp;&ensp;&ensp; 有 id_rsa 和 id_rsa.pub 这两个文件  
 2.登陆Github-SSH Keys		粘贴 id_rsa.pub 内容(公钥)  
 
 ###### 添加远程库
@@ -72,12 +72,12 @@ Git跟踪修改：每次修改，如果不用git add到暂存区，那就不会�
 1.github-create a new repo-输入name，create。成功创建一个新的Git仓库(空的)。  
 2.**关联远程库**	git remote add **origin** https://github.com/XiaochengYe/learngit.git  
 3.本地库内容**推送**	git push -u origin master	(远程仓库不为空，不用-u)  
-	1.若报错OpenSSL SSL_read: Connection was reset, errno 10054  
-	解决方法：查询下面三个域名ip：github.com、github.global.ssl.fastly.net、codeload.Github.com。找到hosts文件，将上述三行（带ip）放在末尾，保存。https://blog.csdn.net/qq_29493173/article/details/113092656  
-	也可以解除SSL验证	git config --global http.sslVerify "false"  
-	2.若报错failed to push some refs to https://github.com/XiaochengYe/learngit.git  
-	解决方法：新创建的那个仓库里面的README文件不在本地仓库目录中，这时可以同步内容。git pull --rebase origin master 再 push。  
-	3。若验证连接ssh -T git@github.com提示输入	输入yes  
+&ensp;&ensp;&ensp;&ensp; 1.若报错OpenSSL SSL_read: Connection was reset, errno 10054  
+&ensp;&ensp;&ensp;&ensp; 解决方法：查询下面三个域名ip：github.com、github.global.ssl.fastly.net、codeload.Github.com。找到hosts文件，将上述三行（带ip）放在末尾，保存。https://blog.csdn.net/qq_29493173/article/details/113092656  
+&ensp;&ensp;&ensp;&ensp; 也可以解除SSL验证	git config --global http.sslVerify "false"  
+&ensp;&ensp;&ensp;&ensp; 2.若报错failed to push some refs to https://github.com/XiaochengYe/learngit.git  
+&ensp;&ensp;&ensp;&ensp; 解决方法：新创建的那个仓库里面的README文件不在本地仓库目录中，这时可以同步内容。git pull --rebase origin master 再 push。  
+&ensp;&ensp;&ensp;&ensp; 3。若验证连接ssh -T git@github.com提示输入	输入yes  
 之后，只要本地做了提交。git push origin master	即可将本地master分支**最新修改**推送至Github。	  
 
 ###### 删除远程库
@@ -97,25 +97,25 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://github.
 
 ![git-br-initial](\learngit\pic\0.png)
 1.**创建并切换**dev分支	git checkout -b dev  
-		即：**创建分支**git branch dev； **切换分支**git checkout dev  
-	**查看当前分支**(*)	git branch  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 即：**创建分支**git branch dev； **切换分支**git checkout dev  
+&ensp;&ensp;&ensp;&ensp; **查看当前分支**	git branch  
 2.git add和commit修改  
 3.分支工作完成切换回master分支  
-	法一：git checkout master  
-	法二：**创建并切换**到dev分支git switch -c dev		**切换**已有分支	git switch master[同1]  
+&ensp;&ensp;&ensp;&ensp; 法一：git checkout master  
+&ensp;&ensp;&ensp;&ensp; 法二：**创建并切换**到dev分支git switch -c dev		**切换**已有分支	git switch master[同1]  
 4.将dev分支的工作成果**合并到当前**(master)分支	git merge dev  
 5.**删除**dev分支	git branch -d dev  
-	git branch 查看，只有master  
+&ensp;&ensp;&ensp;&ensp; git branch 查看，只有master  
 
 ###### 解决冲突
 
 1.新分支	git switch -c feature1  
-	修改readme.txt		在feature1分支上提交(add commit)  
+&ensp;&ensp;&ensp;&ensp; 修改readme.txt		在feature1分支上提交(add commit)  
 2.切换 master		 git switch master  
-	修改readme.txt		在master分支上提交(add commit)  
+&ensp;&ensp;&ensp;&ensp; 修改readme.txt		在master分支上提交(add commit)  
 3.合并	git merge feature1  
-	冲突！git status查看，cat xxx查看readme.txt的内容。  
-	修改文件，再提交。(add commit)  
+&ensp;&ensp;&ensp;&ensp; 冲突！git status查看，cat xxx查看readme.txt的内容。  
+&ensp;&ensp;&ensp;&ensp; 修改文件，再提交。(add commit)  
 4.查看分支合并情况	**git log --graph** --pretty=oneline --abbrev-commit  
 5.删除feature1分支	git branch -d feature1  
 **小结**：当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。解决冲突就是把Git合并失败的文件手动编辑为我们希望的内容，再提交。  
@@ -128,29 +128,29 @@ git clone git@github.com:michaelliao/gitskills.git 或 git clone https://github.
 2.修改readme.txt文件，提交。  
 3.切换回master		git switch master  
 4.合并dev分支	git merge --no-ff -m "merge with no-ff" dev		(禁用Fast forward)  
-	本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。  
+&ensp;&ensp;&ensp;&ensp; 本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去。  
 5.查看分支历史	git log --graph --pretty=oneline --abbrev-commit  
-	不使用Fast forward模式。可以看到dev分支。  
+&ensp;&ensp;&ensp;&ensp; 不使用Fast forward模式。可以看到dev分支。  
 
 ###### bug分支
 
 1.查看工作区		git status 	(有未提交内容)  
 2.储藏工作现场	git stash  
-	git status，工作区干净状态。  
+&ensp;&ensp;&ensp;&ensp; git status，工作区干净状态。  
 3.在master分支修复bug，创建临时分支。  
-	git checkout master  
-	git checkout -b issue-101  
-	提交add、commit。  
+&ensp;&ensp;&ensp;&ensp; git checkout master  
+&ensp;&ensp;&ensp;&ensp; git checkout -b issue-101  
+&ensp;&ensp;&ensp;&ensp; 提交add、commit。  
 4.修复完成，切回master，并完成合并，删除issue-101分支。  
-	git switch master  
-	git merge --no-ff -m "merged bug fix 101" issue-101  
-	git branch -d issue-101  
+&ensp;&ensp;&ensp;&ensp; git switch master  
+&ensp;&ensp;&ensp;&ensp; git merge --no-ff -m "merged bug fix 101" issue-101  
+&ensp;&ensp;&ensp;&ensp; git branch -d issue-101  
 5.回dev干活。恢复工作区  
-	1.git switch dev  
-	2.git status查看，工作区是干净的。  
-	3.git stash list查看列表，恢复。  
-		1.git stash apply	stash内容并不删除		git stash drop删除  
-		2.git stash pop	把stash内容也删  
+&ensp;&ensp;&ensp;&ensp; 1.git switch dev  
+&ensp;&ensp;&ensp;&ensp; 2.git status查看，工作区是干净的。  
+&ensp;&ensp;&ensp;&ensp; 3.git stash list查看列表，恢复。  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 1.git stash apply	stash内容并不删除		git stash drop删除  
+&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp; 2.git stash pop	把stash内容也删  
 
 **小结**：  
 1.修复bug时，我们会通过创建新的bug分支进行修复，然后合并，最后删除。  
